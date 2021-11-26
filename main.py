@@ -136,6 +136,7 @@ sign = tk.Label(twindow, textvariable=v, image=img, compound='center').pack()
 
 twindow.overrideredirect(True)
 twindow.wm_attributes('-transparentcolor', 'white')
+twindow.attributes('-topmost', True)
 twindow.after(20000, update_sign)  # 20 seconds
 
 # window configuration
@@ -143,6 +144,7 @@ bwindow.config(highlightbackground='black')
 label = tk.Label(bwindow, bd=0, bg='black')
 bwindow.overrideredirect(True)
 bwindow.wm_attributes('-transparentcolor', 'black')
+bwindow.attributes('-topmost', True)
 label.pack()
 # loop the program
 bwindow.after(1, update_buddy, config.CYCLE, config.CHECK, config.EVENT_NUMBER, config.BUDDY_X_POS, config.BUDDY_Y_POS)
